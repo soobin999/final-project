@@ -11,8 +11,6 @@ import com.cook.talk.model.VO.UserVO;
 @Controller
 public class UserController {
 
-	@Autowired
-	private UserVO userVO; 
 	
 	@RequestMapping("/")
 	public String index() {
