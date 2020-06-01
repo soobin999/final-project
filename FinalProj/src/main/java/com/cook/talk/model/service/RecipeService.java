@@ -6,3 +6,7 @@ public interface RecipeService {
 	
 	public List<String> ingrNameList(int cs);
 }
+
+
+
+

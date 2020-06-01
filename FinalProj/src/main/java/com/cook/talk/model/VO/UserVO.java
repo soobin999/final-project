@@ -2,8 +2,11 @@ package com.cook.talk.model.VO;
 
 import java.sql.Date;
 
+import org.apache.ibatis.type.Alias;
+
 import lombok.Data;
 
+@Alias("userVO")
 @Data
 public class UserVO {
 
@@ -14,5 +17,5 @@ public class UserVO {
 	private boolean gender;
 	private boolean access;
 	private String userPic;
-	private int rcpUploads; 
-	}
+	private int rcpUploads;
+}

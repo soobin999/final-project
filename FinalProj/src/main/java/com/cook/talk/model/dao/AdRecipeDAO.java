@@ -14,8 +14,8 @@ public interface AdRecipeDAO {
 	
 	public void updateRecipe(RecipeVO rcpUpdate);
 	public List<RecipeVO> searchRecipeByNickName(UserVO userNickName);
-	public List<RecipeVO> selectStaticMonths(RecipeVO rcpMonth);
-	public List<RecipeVO> selectStaticsGender(RecipeVO rcpGender);
-	public List<RecipeVO> selectStaticsAge(RecipeVO rcpAge);
+	public int selectStaticMonths(RecipeVO rcpMonth);
+	public int selectStaticsGender(RecipeVO rcpGender);
+	public int selectStaticsAge(RecipeVO rcpAge);
 	
 }

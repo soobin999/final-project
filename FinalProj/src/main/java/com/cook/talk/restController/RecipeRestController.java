@@ -12,7 +12,7 @@ import com.cook.talk.model.dao.RecipeDAO;
 public class RecipeRestController {
 
 	@Autowired
-	RecipeDAO recipeDAO;
+	private RecipeDAO recipeDAO;
 	
 	//재료 리스트 받아오기(냉파)
 	@PostMapping("/ingrSelect")
