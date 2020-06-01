@@ -8,6 +8,6 @@ import lombok.Data;
 @Data
 public class UserDTO {
 
-	private UserDTO user;
+	private UserVO user;
 	private QnAVO qna;
 }
