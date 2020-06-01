@@ -1,19 +1,14 @@
 package com.cook.talk.controller;
 
 import javax.servlet.http.HttpSession;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.cook.talk.model.VO.UserVO;
 
 
 @Controller
 public class UserController {
 
-	@Autowired
-	private UserVO userVO; 
 	
 	//메인 페이지
 	@RequestMapping("/")
