@@ -1,7 +1,6 @@
 package com.cook.talk.model.VO;
 
 import java.sql.Date;
-import java.util.List;
 
 import com.cook.talk.model.dto.RecipeDTO;
 
