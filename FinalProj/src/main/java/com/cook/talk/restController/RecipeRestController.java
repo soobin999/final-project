@@ -1,4 +1,4 @@
-package com.cook.talk.RestController;
+package com.cook.talk.restController;
 
 public class RecipeRestController {
 

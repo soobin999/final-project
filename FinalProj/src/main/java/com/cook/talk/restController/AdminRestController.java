@@ -1,4 +1,4 @@
-package com.cook.talk.RestController;
+package com.cook.talk.restController;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
