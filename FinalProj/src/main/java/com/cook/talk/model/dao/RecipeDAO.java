@@ -8,5 +8,5 @@ public interface RecipeDAO {
 
 	//jungmin
 	public List<IngrVO> allSelectIngrList(IngrVO ingrVO);
-	
+
 }
