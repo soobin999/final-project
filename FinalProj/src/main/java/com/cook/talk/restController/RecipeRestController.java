@@ -21,7 +21,7 @@ public class RecipeRestController {
 		List<IngrVO> ingrs = recipeDAO.allSelectIngrList(ingrVO);
 		model.addAttribute("ingrs", ingrs);
 		
-		return "jm/ingrSelect";
+		return "refrigerator/ingrSelect";
 	}
 	
 }

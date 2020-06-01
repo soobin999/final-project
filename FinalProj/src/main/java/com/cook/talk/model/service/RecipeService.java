@@ -1,5 +1,8 @@
 package com.cook.talk.model.service;
 
-public interface RecipeService {
+import java.util.List;
 
+public interface RecipeService {
+	
+	public List<String> ingrNameList(int cs);
 }
