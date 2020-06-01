@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cook.talk.model.dao.AdRecipeDAO">
+	<select id="allSelectRecipe"
+		resultType="com.cook.talk.model.dao.AdRecipeDAO">
+		select * from rcp
+	</select>
+	
+		<select id="searchRecipeByNickName"
+		resultType="com.cook.talk.model.dao.AdRecipeDAO">
+		select * from rcp where
+	</select>
+	
+		<select id="selectStaticMonths">
+		select count(*) from comment where cafe_code=#{cafe_code}
+	</select>
+	
+		<select id="selectStaticsGender">
+		select count(*) from comment where cafe_code=#{cafe_code}
+	</select>
+	
+		<select id="selectStaticsAge">
+		select count(*) from comment where cafe_code=#{cafe_code}
+	</select>
+</mapper>
+	
