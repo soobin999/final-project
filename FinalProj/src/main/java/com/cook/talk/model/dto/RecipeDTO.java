@@ -7,6 +7,7 @@ import com.cook.talk.model.VO.RcpComVO;
 import com.cook.talk.model.VO.RcpIngrVO;
 import com.cook.talk.model.VO.RcpOrderVO;
 import com.cook.talk.model.VO.RecipeVO;
+import com.cook.talk.model.VO.UserVO;
 
 import lombok.Data;
 
@@ -18,6 +19,6 @@ public class RecipeDTO {
 	private List<RcpIngrVO> recipeIngr;
 	private List<RcpComVO> recipeCom;
 	private List<String> tag;
-	private UserDTO user;
+	private UserVO user;
 	private RcpCatVO recipeCat;
 }
