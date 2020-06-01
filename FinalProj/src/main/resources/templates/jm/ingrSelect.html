@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>냉장고 파먹기(정민)</title>
+</head>
+<body>
+
+<tbody>
+<tr th:each="ingrs : ${ingrs}">
+	<td th:text="${ingrs.ingrName}"></td>
+</tr>
+</tbody>
+</body>
+</html>
