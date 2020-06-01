@@ -20,7 +20,7 @@
 		<select id="selectStaticsGender">
 		select count(*) from comment where cafe_code=#{cafe_code}
 	</select>
-	
+		
 		<select id="selectStaticsAge">
 		select count(*) from comment where cafe_code=#{cafe_code}
 	</select>
