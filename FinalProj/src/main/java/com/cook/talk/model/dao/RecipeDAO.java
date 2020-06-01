@@ -4,7 +4,6 @@ import java.util.List;
 
 
 import com.cook.talk.model.VO.IngrVO;
-import com.cook.talk.model.dto.RecipeDTO;
 
 public interface RecipeDAO {
 
@@ -12,6 +11,10 @@ public interface RecipeDAO {
 	public List<IngrVO> allSelectIngrList(IngrVO ingrVO);
 	public List<String> getIngrName(String chosung1, String chosung2);
 
+<<<<<<< HEAD
+	
+=======
 	public List<RecipeDTO> getRecipeList(RecipeDTO recipe);
 
+>>>>>>> 128621f5c9f36128fdceba3430fade71d68ee1a3
 }

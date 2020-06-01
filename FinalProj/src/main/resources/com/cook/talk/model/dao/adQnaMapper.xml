@@ -8,9 +8,12 @@
 		select * from rcp
 	</select>
 
-	<insert id="insertReply" parameterType="">
-		insert into qna(answer)
-		Values(#{answer}) where userId=#{userId}
-	</insert>
+	<update id="insertReply" parameterType="qnaVO">
+		update qna
+		set answer = #{answer}
+		 where userId = #{userId};
+	</update>
+
+
 </mapper>
 	
