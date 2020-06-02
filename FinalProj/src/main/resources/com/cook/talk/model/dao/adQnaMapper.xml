@@ -6,6 +6,7 @@
 
 	<select id="selectQna" resultType="qnAVO">
 		select * from rcp
+	</select>
 	<select id="selectQna" resultType="qnaVO">
 		select * from recipe.qna
 	</select>
