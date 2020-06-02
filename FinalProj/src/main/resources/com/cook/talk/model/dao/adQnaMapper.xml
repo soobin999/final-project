@@ -6,14 +6,14 @@
 
 	<select id="selectQna" resultType="qnAVO">
 		select * from rcp
+	<select id="selectQna" resultType="qnaVO">
+		select * from recipe.qna
 	</select>
 
 	<update id="insertReply" parameterType="qnAVO">
 		update qna
 		set answer = #{answer}
-		 where userId = #{userId};
+		 where userId = #{userId}
 	</update>
-
-
 </mapper>
 	

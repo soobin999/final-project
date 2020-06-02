@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+
 import lombok.AllArgsConstructor;
 
 @Configuration
@@ -17,6 +18,8 @@ public class Security extends WebSecurityConfigurerAdapter{
 	@Override
 	public void configure(WebSecurity web) throws Exception{
 
+
+		//WebSecurity: FilterChainProxy 생성하는 필터 
 		web.ignoring().antMatchers("/**");
 		
 	}
@@ -51,8 +54,8 @@ public class Security extends WebSecurityConfigurerAdapter{
                 .and()
                 //403 예외 처리 핸들링 
                 .exceptionHandling().accessDeniedPage("/user/denid");
-	
      
                 //모든 경로에 대해서 권한없이 접근 가능 
+
     }
 }

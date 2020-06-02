@@ -11,11 +11,17 @@ import com.cook.talk.model.VO.UserVO;
 public interface AdRecipeDAO {
 
 	public List<RecipeVO> allSelectRecipe();
-	
+
 	public void updateRecipe(RecipeVO rcpUpdate);
+
 	public List<RecipeVO> searchRecipeByNickName(UserVO userNickName);
-	public int selectStaticMonths(RecipeVO rcpMonth);
-	public int selectStaticsGender(RecipeVO rcpGender);
-	public int selectStaticsAge(RecipeVO rcpAge);
-	
+
+	public List<RecipeVO> searchRcpByRcpCode(String rcpCode);
+
+	public List<Integer> selectStaticMonths(String rcpCode);
+
+	public List<Integer> selectStaticsGender(String rcpCode);
+
+	public List<Integer> selectStaticsAge(String rcpCode);
+
 }

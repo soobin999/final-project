@@ -12,7 +12,7 @@ import com.cook.talk.model.service.MainService;
 @Controller
 public class MainController {
 
-	@Autowired
+	@Autowired(required = false)
 	private MainService main;
 	@Autowired(required = false)
 	private ChefDAO chef;
@@ -26,5 +26,8 @@ public class MainController {
 		model.addAttribute("",main.recipeList(expl));
 		return "/loginIndex";
 	}
-	
+	@PostMapping
+	public String qnaDAO() {
+		return "/admin/complain";
+		}
 }
