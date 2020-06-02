@@ -18,6 +18,7 @@ public class UserVO {
 	private boolean access;
 	private String userPic;
 	private int rcpUploads;
+	private int followers;
 	
 	
 	public static Object toEntity() {

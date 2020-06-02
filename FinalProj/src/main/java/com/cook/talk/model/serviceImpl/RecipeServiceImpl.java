@@ -17,5 +17,7 @@ public class RecipeServiceImpl implements RecipeService{
 		List<String> ingrNameList = recipeDAO.getIngrName(chosungList[cs], chosungList[cs+1]);
 		return ingrNameList;
 	}
+	
+	
 
 }
