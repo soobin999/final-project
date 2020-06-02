@@ -2,8 +2,10 @@ package com.cook.talk.model.dao;
 
 import java.util.List;
 
-import com.cook.talk.model.VO.IngrVO;
+import org.springframework.stereotype.Service;
 
+import com.cook.talk.model.VO.IngrVO;
+@Service
 public interface AdIngrDAO {
 
 	public List<IngrVO> searchIngr(IngrVO ingrVO);

@@ -4,21 +4,25 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cook.talk.model.dao.ChefDAO">
 
-	<select id="selectChefDetail" resultType="userVO">
-		select * from user from userid=#{id}
+	<select id="selectChefDetail" resultType="chefDTO">
+		select us.nickNameus.userPic us.rcpUploads,us.followers,sum(rcpViews) as rcpviews
+			   from user as us,rcp 
+			   where us.userId=rcp.userId, userId=#{id}
 	</select>
 	<select id="selectFollow">
-		select count(*) from user from userid=#{userId} and followChef=#{chefId}
+		select count(*) from user from userId=#{userId} and followChef=#{chefId}
 	</select>
 	
 	<select id="selectRecipe" resultType="recipeVO">
-		select userid,rcpTitle,rcpPic from rcp where userid = #{userId}
+		select userid,rcpTitle,rcpPic from rcp where userId = #{userId}
 	</select>
-	<select id="allSelectChef">
-		select us.nickNameus.userPic us.rcpUploads,us.followerssum(rcpViews) as views
+	<select id="allSelectChef" resultType="chefDTO">
+		select us.nickNameus.userPic us.rcpUploads,us.followers,sum(rcpViews) as rcpviews
 			   from user as us,rcp 
 			   where us.userId=rcp.userId
 			   group by us.userId 
-			   order by us.rcpUploads,us.followers,rcp.rcpviews
+			  <if test="status==rcpUploads">order by us.rcpUploads,us.followers,rcp.rcpviews</if>
+			  <if test="status==followers">order by us.followers,us.rcpUploads,rcp.rcpviews</if> 
+			  <if test="status==rcpveiws">order by rcp.rcpviews,us.rcpUploads,us.followers</if> 
 	</select>
 </mapper>

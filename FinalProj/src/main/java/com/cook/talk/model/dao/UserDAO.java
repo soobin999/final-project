@@ -1,7 +1,9 @@
 package com.cook.talk.model.dao;
 
-import com.cook.talk.model.VO.UserVO;
+import org.springframework.stereotype.Service;
 
+import com.cook.talk.model.VO.UserVO;
+@Service
 public interface UserDAO {
 	/*public void insertUser(UserVO user);
 public int userIdCheck(String userId);
