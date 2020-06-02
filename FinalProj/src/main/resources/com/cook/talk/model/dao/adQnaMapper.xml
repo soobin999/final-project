@@ -5,13 +5,13 @@
 <mapper namespace="com.cook.talk.model.dao.QnADAO">
 
 	<select id="selectQna" resultType="qnaVO">
-		select * from rcp
+		select * from recipe.qna
 	</select>
 
 	<update id="insertReply" parameterType="qnaVO">
 		update qna
 		set answer = #{answer}
-		 where userId = #{userId};
+		 where userId = #{userId}
 	</update>
 
 

@@ -23,5 +23,8 @@ public class MainController {
 		model.addAttribute("",main.recipeList(expl));
 		return "/loginIndex";
 	}
-	
+	@PostMapping
+	public String qnaDAO() {
+		return "/admin/complain";
+		}
 }
