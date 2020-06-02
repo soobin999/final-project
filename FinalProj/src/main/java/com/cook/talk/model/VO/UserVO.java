@@ -2,16 +2,17 @@ package com.cook.talk.model.VO;
 
 import java.sql.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import lombok.NoArgsConstructor;
 
+
+import org.apache.ibatis.type.Alias;
+
+
+
+@Alias("userVO")
 @Data
 @AllArgsConstructor
 public class UserVO {
@@ -24,5 +25,6 @@ public class UserVO {
 	private boolean access;
 	private String userPic;
 	private int rcpUploads;
+	private int followers;
 	
 }

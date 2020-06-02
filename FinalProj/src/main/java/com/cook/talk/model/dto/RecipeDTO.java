@@ -2,6 +2,8 @@ package com.cook.talk.model.dto;
 
 import java.util.List;
 
+import org.springframework.data.annotation.TypeAlias;
+
 import com.cook.talk.model.VO.RcpCatVO;
 import com.cook.talk.model.VO.RcpComVO;
 import com.cook.talk.model.VO.RcpIngrVO;
@@ -11,6 +13,7 @@ import com.cook.talk.model.VO.UserVO;
 
 import lombok.Data;
 
+@TypeAlias("recipeDto")
 @Data
 public class RecipeDTO {
 

@@ -3,8 +3,27 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
         
 <mapper namespace="com.cook.talk.model.dao.RecipeDAO">
+
+	<sql id="recipedtoColumns">
+		  rcpCode, nickName, rcpTitle, rcpDate, rcpViews, rcpExpl, video, rcpPic, 
+		  personnel, cookTime, level, registerStatus, cookType, 
+		  cookSituation, cookMethod, ingrCat, userIngr, ingrWeigh, cookOrder, cookCont,
+		  cookPic, rcpCom, rcpComDate, tag
+	</sql>
+
 	<select id="getIngrName" parameterType="String" resultType="com.cook.talk.model.VO.IngrVO">
 	SELECT ingrName FROM recipe.ingr WHERE ingrName>=#{chosung1} AND ingrName<![CDATA[>]]>#{chosung2}
 	</select>
+
+
+	<select id="getRecipeList" parameterType="recipeDto">
+	SELECT * FROM recipe.recipedto;
+	</select>
+	
+	<insert id="insertRecipe" parameterType="recipeDto">
+	INSERT INTO recipe.recipedto (<include refid="recipedtoColumns" /> ) 
+	VALUES (#{} )
+	</insert>	
+
 
 </mapper>
