@@ -11,7 +11,7 @@ import com.cook.talk.model.service.MainService;
 @Controller
 public class MainController {
 
-	@Autowired
+	@Autowired(required = false)
 	private MainService main;
 	
 	@GetMapping("/index")

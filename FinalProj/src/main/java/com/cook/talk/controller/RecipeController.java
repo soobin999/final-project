@@ -29,31 +29,20 @@ public class RecipeController {
 		return "newlist";
 	}
 
-	@Autowired
+	@Autowired(required = false)
 	private RecipeDAO recipeDAO;
 	
-	@PostMapping("/ingrSelect")
+	@GetMapping("/ingrSelect")
 	public String refrigeratorSearch(Model model, IngrVO ingrVO, HttpSession session) {
-			
-		
-		//냉파 재료 검색창 - 검색어 없이 검색했을 때 공백
-		if(ingrVO.getIngrName() != null) {
-			//DB검색이 아닌 내가 검색한 키워드를 저장하여 이미 있는 리스트에서 검색
+
+		if (ingrVO.getIngrName() != null) {
+			// DB검색이 아닌 내가 검색한 키워드를 저장하여 이미 있는 리스트에서 검색
 			model.addAttribute("ingrName", ingrVO.getIngrName());
 		} else {
-			model.addAttribute("ingrName","");
+			model.addAttribute("ingrName", "");
 		}
-		
-		//재료 리스트
-		List<IngrVO> ingrs = recipeDAO.allSelectIngrList(ingrVO);
-		model.addAttribute("ingrs", ingrs);
-		
-		//재료 담아놓는 곳
-		session.setAttribute("mySelectIngr", ingrVO);
-		model.addAttribute("ingrList", recipeDAO.getMySelectedIngrList(ingrVO));
-		
+
 		return "refrigerator/ingrSelect";
 	}
-	
 
 }

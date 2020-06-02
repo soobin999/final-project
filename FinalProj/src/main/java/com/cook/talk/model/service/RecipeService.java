@@ -10,8 +10,9 @@ public interface RecipeService {
 	static List<RecipeDTO> getRecipeList(RecipeDTO recipe) {
 		// TODO Auto-generated method stub
 		return null;
+	}
 
-}
+	public List<String> ingrNameList(int cs);
 }
 
 
