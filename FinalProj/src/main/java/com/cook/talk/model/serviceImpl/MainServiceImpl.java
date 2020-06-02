@@ -1,25 +1,27 @@
 package com.cook.talk.model.serviceImpl;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.FormHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import com.cook.talk.model.VO.RecipeVO;
 import com.cook.talk.model.dao.ChefDAO;
-import com.cook.talk.model.dto.ChefDTO;
 import com.cook.talk.model.service.MainService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+@Service
 public class MainServiceImpl implements MainService {
 
-	@Autowired
+	@Autowired(required = false)
 	private ChefDAO chef;
 	@Override
 	public List<RecipeVO> recipeList(String expl) {
@@ -46,14 +48,7 @@ public class MainServiceImpl implements MainService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    
-	    
 		return null;
 	}
-
-	public void recipe() {
-		System.out.println("re");
-		List<ChefDTO> che=chef.allSelectChef("rcpUploads");
-		System.out.println(che);
-	}
+	
 }

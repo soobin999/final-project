@@ -2,16 +2,16 @@ package com.cook.talk.model.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import com.cook.talk.model.VO.RecipeVO;
 import com.cook.talk.model.dto.ChefDTO;
 
-@Service
+@Mapper
 public interface ChefDAO {
 
-	public ChefDTO selectChefDetail(String id);
+	public ChefDTO selectChefDetail(String userId);
 
 	public int selectFollow(String userId,String chefId);
 

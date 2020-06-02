@@ -11,7 +11,7 @@ import com.cook.talk.model.dao.ChefDAO;
 @Controller
 public class ChefController {
 
-	@Autowired
+	@Autowired(required = false)
 	private ChefDAO chefDAO;
 
 	@PostMapping("/chefRank")

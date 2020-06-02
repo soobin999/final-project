@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.cook.talk.model.dao.ChefDAO;
 import com.cook.talk.model.service.MainService;
 
 @Controller
@@ -13,9 +14,11 @@ public class MainController {
 
 	@Autowired
 	private MainService main;
-	
+	@Autowired(required = false)
+	private ChefDAO chef;
 	@GetMapping("/index")
-	public String index() {
+	public String index(Model model) {
+		model.addAttribute("chef",chef.selectChefDetail("zleda9@naver.com"));
 		return "/main/index";
 	}
 	@PostMapping
