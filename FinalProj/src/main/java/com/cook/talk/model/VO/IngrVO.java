@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+@Alias("ingrVO")
 @Data
 @Getter @Setter @ToString
 public class IngrVO {

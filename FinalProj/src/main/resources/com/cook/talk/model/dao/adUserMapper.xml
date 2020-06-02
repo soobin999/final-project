@@ -3,7 +3,7 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.cook.talk.model.dao.AdRecipeDAO">
+<mapper namespace="com.cook.talk.model.dao.AdUserDAO">
 	<select id="allSelectUserId" resultType="userVO">
 		select * from user
 	</select>

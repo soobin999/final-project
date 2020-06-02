@@ -16,5 +16,8 @@ public class MainController {
 	public String loginIndex() {
 		return "/loginIndex";
 	}
-	
+	@PostMapping
+	public String qnaDAO() {
+		return "/admin/complain";
+		}
 }
