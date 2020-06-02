@@ -1,12 +1,10 @@
 package com.cook.talk.security;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import lombok.AllArgsConstructor;
@@ -18,7 +16,7 @@ public class Security extends WebSecurityConfigurerAdapter{
 
 	@Override
 	public void configure(WebSecurity web) throws Exception{
-		
+
 		web.ignoring().antMatchers("/**");
 		
 	}
@@ -54,7 +52,7 @@ public class Security extends WebSecurityConfigurerAdapter{
                 //403 예외 처리 핸들링 
                 .exceptionHandling().accessDeniedPage("/user/denid");
 	
-                
-            
+     
+                //모든 경로에 대해서 권한없이 접근 가능 
     }
 }
