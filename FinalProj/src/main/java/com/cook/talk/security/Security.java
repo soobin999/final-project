@@ -1,16 +1,13 @@
 package com.cook.talk.security;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-<<<<<<< HEAD
-import org.springframework.security.crypto.password.PasswordEncoder;
+
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-=======
->>>>>>> ac6c61fb056e5d4b34e830691f1b496f1909cbd4
+
 
 import lombok.AllArgsConstructor;
 
@@ -21,11 +18,9 @@ public class Security extends WebSecurityConfigurerAdapter{
 
 	@Override
 	public void configure(WebSecurity web) throws Exception{
-<<<<<<< HEAD
+
 		//WebSecurity: FilterChainProxy 생성하는 필터 
-		
-=======
->>>>>>> ac6c61fb056e5d4b34e830691f1b496f1909cbd4
+
 		web.ignoring().antMatchers("/**");
 		
 	}
@@ -37,7 +32,7 @@ public class Security extends WebSecurityConfigurerAdapter{
                 // 페이지 권한 설정 HttpServletRequest에 따라 접근을 제한 
 		
                 .antMatchers("/admin/**").hasRole("ADMIN")
-<<<<<<< HEAD
+
                //antMatchers로 특정 경로 지정,hasRole/permitAll메서드 역할에 따른 접근 설정을 잡아준다. 
                // /admin으로 시작하는 경로는  어드민 사용자만 접근 가능         
                 .antMatchers("/user/myinfo").hasRole("MEMBER")
@@ -61,11 +56,6 @@ public class Security extends WebSecurityConfigurerAdapter{
                 .and()
                 //403 예외 처리 핸들링 
                 .exceptionHandling().accessDeniedPage("/user/denid");
-	
-=======
-                .antMatchers("/user/**").hasRole("MEMBER")
-                .antMatchers("/**").permitAll();
-            
->>>>>>> ac6c61fb056e5d4b34e830691f1b496f1909cbd4
+
     }
 }
