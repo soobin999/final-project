@@ -15,6 +15,7 @@ public class Security extends WebSecurityConfigurerAdapter{
 
 	@Override
 	public void configure(WebSecurity web) throws Exception{
+
 		web.ignoring().antMatchers("/**");
 		
 	}
@@ -31,6 +32,5 @@ public class Security extends WebSecurityConfigurerAdapter{
                 .antMatchers("/user/myinfo").hasRole("MEMBER")
                 .antMatchers("/**").permitAll();
                 //모든 경로에 대해서 권한없이 접근 가능 
-                
     }
 }
