@@ -16,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cook.talk.model.VO.UserVO;
 import com.cook.talk.model.dao.UserDAO;
-import com.cook.talk.model.dto.UserDTO;
 
 
 import lombok.AllArgsConstructor;
@@ -27,18 +26,20 @@ import lombok.AllArgsConstructor;
 
 public class UserService implements UserDetailsService {
 	private UserDAO userDAO;
+	
 
+	
 	@Transactional
 	public int joinUser(UserVO userVO) { // 비밀번호 암호화
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		userVO.setUserPw(passwordEncoder.encode(userVO.getUserPw()));
 
-		return userDAO.save(userVO);
+		return userDAO.login(userVO);
 	}
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
+     //입력한 아이디 값을 통해 디비에서 값을 읽어오는것.  디비에있으면userDto 객체에 로그인 정보 담는다. 
 		UserVO userEntity = userDAO.findUserById(username);
 		List<GrantedAuthority> authorities = new ArrayList<>();
 

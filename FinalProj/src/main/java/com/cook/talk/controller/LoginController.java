@@ -1,9 +1,14 @@
 package com.cook.talk.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.elasticsearch.client.security.user.User;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,6 +36,20 @@ public class LoginController {
 	public String re_pw() {
 		return "/login";
 	}
+	
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("user");
+		return "index";
+	}
+
+	
+	@GetMapping("/admin")
+	public String adminPage(@AuthenticationPrincipal User user, Map<String, Object> model) {
+		model.put("currentAdminId", user.getUsername());
+		return"adminpage";
+	}
+	
 	
 	@RequestMapping (value = "/gologin",method =RequestMethod.GET)
 public String gologin(HttpServletRequest request) throws Exception {

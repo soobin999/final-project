@@ -3,7 +3,7 @@ package com.cook.talk.model.VO;
 import java.sql.Date;
 
 
-import lombok.AllArgsConstructor;
+//import lombok.AllArgsConstructor;
 import lombok.Data;
 
 

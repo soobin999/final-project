@@ -21,7 +21,7 @@ public class RecipeController {
 	RecipeService recipeService;
 	
 	@Autowired
-	private RecipeDAO recipeDAO;
+	 RecipeDAO recipeDAO;
 
 	@GetMapping(value = "recipe/newlist")
 	public String getRecipeList(Model model) {

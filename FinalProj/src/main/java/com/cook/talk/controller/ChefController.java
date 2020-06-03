@@ -11,12 +11,12 @@ import com.cook.talk.model.dao.ChefDAO;
 @Controller
 public class ChefController {
 
-	@Autowired(required = false)
-	private ChefDAO chefDAO;
+	@Autowired
+	ChefDAO chefDAO;
 
 	@PostMapping("/chefRank")
 	public String chefRank(Model model,String status) {
-		
+		model.addAttribute("chef", chefDAO.selectChefDetail("zleda9@naver.com"));
 		model.addAttribute("chefList", chefDAO.allSelectChef(status));
 		return "/chef/chefRank";
 	}
