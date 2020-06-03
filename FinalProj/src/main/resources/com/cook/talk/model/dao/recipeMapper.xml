@@ -12,7 +12,8 @@
 	</sql>
 
 	<select id="getIngrName" parameterType="String" resultType="ingrVO">
-	SELECT ingrName FROM recipe.ingr WHERE ingrName>=#{chosung1} AND ingrName<![CDATA[>]]>#{chosung2}
+	SELECT ingrName FROM recipe.ingr WHERE ingrName>=#{chosung1}
+	<if test='chosung1!="하"'>AND ingrName<![CDATA[>]]>#{chosung2}</if>
 	</select>
 
 
