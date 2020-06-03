@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cook.talk.model.dao.RecipeDAO;
 import com.cook.talk.model.service.RecipeService;
@@ -15,7 +17,7 @@ public class RecipeController {
 	RecipeService recipeService;
 	
 	@Autowired
-	 RecipeDAO recipeDAO;
+	RecipeDAO recipeDAO;
 
 	@GetMapping(value = "recipe/newlist")
 	public String getRecipeList(Model model) {
@@ -30,13 +32,14 @@ public class RecipeController {
 	public void insertRecipe(Model model) {
 	}
 
-
 	
 	@GetMapping("/ingrSelect")
 	public String refrigeratorSearch(Model model) {
 
 		
-		model.addAttribute("ingrs",recipeDAO.getIngrName("가", "나"));
+		
+		model.addAttribute("ingrs", recipeDAO.getIngrName("가", "나"));
+		
 		return "refrigerator/ingrSelect";
 	}
 

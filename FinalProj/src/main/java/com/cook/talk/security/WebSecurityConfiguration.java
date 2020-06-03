@@ -8,13 +8,10 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.cook.talk.model.service.UserService;
-
-import lombok.RequiredArgsConstructor;
 
 @Configuration
 @EnableWebSecurity
@@ -39,12 +36,18 @@ public void configure(WebSecurity web) throws Exception{
                      .anyRequest().authenticated()
                     
                      .and()//로그인 설정 
-                .formLogin()
-                    .defaultSuccessUrl("/main")
+                    .formLogin()
+                    .loginPage("/login")
+                    .loginProcessingUrl("/index")
+                   // .defaultSuccessUrl("/index")
+                //.loginProcessingUrl("/loginProcess")
+                  
                     .permitAll()
                     
                     .and()
                 .logout();
+        http.csrf().disable();
+    // .defaultSuccessUrl("/main");
     }
 
       

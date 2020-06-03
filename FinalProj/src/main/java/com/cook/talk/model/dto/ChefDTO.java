@@ -12,7 +12,7 @@ public class ChefDTO extends UserVO {
 
 	public ChefDTO(String userId, String userPw, String nickName, Date birth, int auth, boolean gender, boolean access,
 			String userPic, int rcpUploads, int followers) {
-		super(userId, userPw, nickName, birth, auth, gender, access, userPic, rcpUploads, followers);
+		super();
 		// TODO Auto-generated constructor stub
 	}
 
