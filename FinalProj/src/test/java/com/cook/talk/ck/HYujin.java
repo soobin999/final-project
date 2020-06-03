@@ -23,7 +23,7 @@ public class HYujin {
 	
 	@Test
 	public void save() {
-		UserVO user = new UserVO(null, null, null, null, 0, false, false, null, 0);
+		UserVO user = new UserVO(null, null, null, null, 0, false, false, null, 0, 0);
 		user.setUserId("abcd@naver.com");
 		user.setUserPw("1234");
 		user.setNickName("유찌");

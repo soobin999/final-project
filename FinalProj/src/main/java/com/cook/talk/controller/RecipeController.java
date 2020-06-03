@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import com.cook.talk.model.VO.IngrVO;
 import com.cook.talk.model.dao.RecipeDAO;
@@ -18,7 +17,7 @@ import com.cook.talk.model.service.RecipeService;
 public class RecipeController {
 	
 	@Autowired
-	RecipeService recipeService;
+	private RecipeService recipeService;
 	
 	@Autowired
 	private RecipeDAO recipeDAO;
@@ -34,9 +33,7 @@ public class RecipeController {
 	}
 		
 	public void insertRecipe(Model model) {
-	}
-
-
+		}
 	
 	@GetMapping("/ingrSelect")
 	public String refrigeratorSearch(Model model, IngrVO ingrVO, HttpSession session) {

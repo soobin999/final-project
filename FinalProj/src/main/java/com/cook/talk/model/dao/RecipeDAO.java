@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 
 import com.cook.talk.model.VO.IngrVO;
 import com.cook.talk.model.dto.RecipeDTO;
-@Service
 
+@Service
 public interface RecipeDAO {
 
 	//재료 리스트 받아오기

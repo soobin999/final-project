@@ -22,7 +22,11 @@
 	
 	<insert id="insertRecipe" parameterType="recipeDto">
 	INSERT INTO recipe.recipedto (<include refid="recipedtoColumns" /> ) 
-	VALUES (#{} )
+	VALUES (#{rcpCode}, #{nickName}, #{rcpDate}, 0, #{rcpTitle}, #{rcpExpl} )
+	 rcpCode, nickName, rcpTitle, rcpDate, rcpViews, rcpExpl, video, rcpPic, 
+		  personnel, cookTime, level, registerStatus, cookType, 
+		  cookSituation, cookMethod, ingrCat, userIngr, ingrWeigh, cookOrder, cookCont,
+		  cookPic, rcpCom, rcpComDate, tag
 	</insert>	
 
 
