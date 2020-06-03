@@ -14,4 +14,5 @@ public class QnAVO {
 	private String qnaCont;
 	private Date qnaDate;
 	private String answer;
+	private String userId;
 }

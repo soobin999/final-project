@@ -14,7 +14,7 @@
 	</select>
 	
 	<select id="selectRecipe" resultType="recipeVO">
-		select userid,rcpTitle,rcpPic from rcp where userId = #{userId}
+		select userId,rcpTitle,rcpPic from rcp where userId = #{userId}
 	</select>
 	<select id="allSelectChef" resultType="chefDTO">
 		select us.nickName,us.userPic,us.rcpUploads,us.followers, sum(rcpViews) as rcpview
