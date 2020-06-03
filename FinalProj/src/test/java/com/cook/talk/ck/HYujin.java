@@ -25,6 +25,7 @@ public class HYujin {
 
 	@Test
 	public void save() {
+<<<<<<< HEAD
 
 		UserVO user = new UserVO();
 		user.setUserId("spd@naver.com");
@@ -32,11 +33,25 @@ public class HYujin {
 		user.setNickName("스파이더");
 		user.setBirth(new Date(1994 - 06 - 05));
 
+=======
+		UserVO user = new UserVO(null, null, null, null, 0, false, false, null, 0, 0);
+		user.setUserId("abcd@naver.com");
+		user.setUserPw("1234");
+		user.setNickName("유찌");
+		user.setBirth(new Date(1994 - 06 - 05));
+>>>>>>> 5e97c148f237357ef8d5b0fc786cc65e185d2ef5
 		user.setGender(true);
 		user.setAccess(true);
 		user.setAuth(0);
 
+<<<<<<< HEAD
 		userDao.login(user);
 
 	}
 }
+=======
+		userDao.save(user);
+
+	}
+}
+>>>>>>> 5e97c148f237357ef8d5b0fc786cc65e185d2ef5
