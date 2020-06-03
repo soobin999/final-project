@@ -39,12 +39,18 @@ public void configure(WebSecurity web) throws Exception{
                      .anyRequest().authenticated()
                     
                      .and()//로그인 설정 
-                .formLogin()
-                    .defaultSuccessUrl("/main")
+                    .formLogin()
+                    .loginPage("/login")
+                    .loginProcessingUrl("/index")
+                   // .defaultSuccessUrl("/index")
+                //.loginProcessingUrl("/loginProcess")
+                  
                     .permitAll()
                     
                     .and()
                 .logout();
+        http.csrf().disable();
+    // .defaultSuccessUrl("/main");
     }
 
       
