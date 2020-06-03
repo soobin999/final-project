@@ -10,4 +10,13 @@ public class UserDTO {
 
 	private UserVO user;
 	private QnAVO qna;
+	
+	public static CharSequence getPassword() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public void setPassword(String encode) {
+		// TODO Auto-generated method stub
+		
+	}
 }
