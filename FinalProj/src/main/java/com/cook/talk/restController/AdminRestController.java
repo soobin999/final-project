@@ -1,5 +1,7 @@
 package com.cook.talk.restController;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,16 +18,16 @@ import com.cook.talk.model.dao.QnADAO;
 
 @RestController
 public class AdminRestController {
-	@Autowired
+	@Autowired(required = false)
 	private QnADAO qnaDAO;
 
-	@Autowired
+	@Autowired(required = false)
 	private AdUserDAO adUserDAO;
 
-	@Autowired
+	@Autowired(required = false)
 	private AdRecipeDAO adRecipeDAO;
 
-	@Autowired
+	@Autowired(required = false)
 	private AdIngrDAO adIngrDAO;
 
 	@PostMapping("/admin/complain")
@@ -55,7 +57,8 @@ public class AdminRestController {
 	}
 
 	@PostMapping("/admin/selectQna") // 모든 qna 뿌려주기 위해
-	public String selectQna(Model model) {
+	public String selectQna(Model model, List qnaList) {
+		model.addAttribute(qnaList);
 
 		return "admin";
 	}
@@ -72,37 +75,38 @@ public class AdminRestController {
 
 	}
 
-	@PostMapping("/admin/updateUserNickName") // 모든 회원정보 뿌려주기 위해
+	@PostMapping("/admin/updateUserNickName") // 닉네임 업데이트
 	public String updateUserNickName(Model model, UserVO nickName) {
 
 		return "admin";
 	}
+	// 회원정보 수정
 
-	@PostMapping("/admin/searchUserByEmail") // 모든 회원정보 뿌려주기 위해
+	@PostMapping("/admin/searchUserByEmail") // 회원 아이디를 통해 찾기
 	public String searchUserByUserId(Model model, UserVO userId) {
 
 		return "admin";
 	}
 
-	@PostMapping("/admin/allSelectRecipe") // 모든 회원정보 뿌려주기 위해
+	@PostMapping("/admin/allSelectRecipe") // 모든 레시피 가져오기
 	public String allSelectRecipe(Model model) {
 
 		return "admin";
 	}
 
-	@PostMapping("/admin/updateUserNickName") // 모든 회원정보 뿌려주기 위해
+	@PostMapping("/admin/updateRecipe") // 레시피 업데이트, (수정)
 	public String updateRecipe(Model model, RecipeVO rcpUpdate) {
 
 		return "admin";
 	}
 
-	@PostMapping("/admin/updateUserNickName") // 모든 회원정보 뿌려주기 위해
+	@PostMapping("/admin/searchUserNickName") // 닉네임 찾아서 레시피 찾기
 	public String searchRecipeByNickName(Model model, UserVO userNickName) {
 
 		return "admin";
 	}
 
-	@PostMapping("/admin/BiRcpStatic") // 모든 회원정보 뿌려주기 위해
+	@PostMapping("/admin/BiRcpStatic") // 통계 뿌려주기위해
 	public String searchRcpByRcpCode(Model model, String rcpCode) {
 		/*
 		 * searchRcpByRcpCode, selectStaticMonths, selectStaticsAge, selectStaticsGender
@@ -117,19 +121,19 @@ public class AdminRestController {
 		return "admin";
 	}
 
-	@PostMapping("/admin/allSelectIngr") // 재료 찾기
+	@PostMapping("/admin/allSelectIngr") // 재료 뿌리기
 	public String allSelectIngr(Model model) {
 
 		return "admin";
 	}
 
-	@PostMapping("/admin/insertIngr") // 재료 찾기
+	@PostMapping("/admin/insertIngr") // 재료 추가
 	public String insertIngr(Model model, IngrVO ingrVO) {
 
 		return "admin";
 	}
 
-	@PostMapping("/admin/deleteIngr") // 재료 찾기
+	@PostMapping("/admin/deleteIngr") // 재료 삭제
 	public void deleteIngr(Model model, IngrVO ingrVO) {
 
 	}

@@ -14,8 +14,9 @@ import com.cook.talk.model.service.RecipeService;
 public class RecipeServiceImpl implements RecipeService{
 
 	@Autowired
-	private RecipeDAO recipeDAO;
-	private IngrVO ingrVO;
+	RecipeDAO recipeDAO;
+	@Autowired(required = false)
+	IngrVO ingrVO;
 	
 	
 	public List<String> ingrNameList(int cs) {

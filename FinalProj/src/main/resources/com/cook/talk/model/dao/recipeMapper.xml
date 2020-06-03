@@ -11,7 +11,7 @@
 		  cookPic, rcpCom, rcpComDate, tag
 	</sql>
 
-	<select id="getIngrName" parameterType="String" resultType="com.cook.talk.model.VO.IngrVO">
+	<select id="getIngrName" parameterType="String" resultType="ingrVO">
 	SELECT ingrName FROM recipe.ingr WHERE ingrName>=#{chosung1} AND ingrName<![CDATA[>]]>#{chosung2}
 	</select>
 
@@ -21,8 +21,8 @@
 	</select>
 	
 	<insert id="insertRecipe" parameterType="recipeDto">
-	INSERT INTO recipe.recipedto (<include refid="recipedtoColumns" /> ) 
-	VALUES (#{} )
+	INSERT INTO recipe.recipedto <![CDATA[(<include refid="recipedtoColumns" /> ) ]]>
+	VALUES (#{chosung2} )
 	</insert>	
 
 
