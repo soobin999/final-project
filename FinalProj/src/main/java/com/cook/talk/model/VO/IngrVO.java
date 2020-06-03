@@ -9,7 +9,6 @@ import lombok.ToString;
 
 @Alias("ingrVO")
 @Data
-@Getter @Setter @ToString
 public class IngrVO {
 
 	private String rcpIngrCode;

@@ -10,24 +10,33 @@
 		  cookSituation, cookMethod, ingrCat, userIngr, ingrWeigh, cookOrder, cookCont,
 		  cookPic, rcpCom, rcpComDate, tag
 	</sql>
-
-	<select id="getIngrName" parameterType="String" resultType="com.cook.talk.model.VO.IngrVO">
+	
+	<select id="getIngrName" parameterType="String" resultType="ingrVO">
 	SELECT ingrName FROM recipe.ingr WHERE ingrName>=#{chosung1} AND ingrName<![CDATA[>]]>#{chosung2}
 	</select>
-
 
 	<select id="getRecipeList" parameterType="recipeDto">
 	SELECT * FROM recipe.recipedto;
 	</select>
 	
-	<insert id="insertRecipe" parameterType="recipeDto">
-	INSERT INTO recipe.recipedto (<include refid="recipedtoColumns" /> ) 
+	
+	
+	
+	<update id="insertRecipe" parameterType="recipeDto">
+	UPDATE INTO recipe.recipedto (<include refid="recipedtoColumns" /> ) 
 	VALUES (#{rcpCode}, #{nickName}, #{rcpDate}, 0, #{rcpTitle}, #{rcpExpl} )
 	 rcpCode, nickName, rcpTitle, rcpDate, rcpViews, rcpExpl, video, rcpPic, 
 		  personnel, cookTime, level, registerStatus, cookType, 
 		  cookSituation, cookMethod, ingrCat, userIngr, ingrWeigh, cookOrder, cookCont,
 		  cookPic, rcpCom, rcpComDate, tag
-	</insert>	
+	</update>
+	
+
+
+	
+	
+	
+	
 
 
 </mapper>

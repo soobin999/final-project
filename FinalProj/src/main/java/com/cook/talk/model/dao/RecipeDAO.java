@@ -2,12 +2,15 @@ package com.cook.talk.model.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Service;
 
 import com.cook.talk.model.VO.IngrVO;
 import com.cook.talk.model.dto.RecipeDTO;
 
 @Service
+@Mapper
+
 public interface RecipeDAO {
 
 	//재료 리스트 받아오기
@@ -23,16 +26,13 @@ public interface RecipeDAO {
 	public List<String> getMySelectedIngrList(IngrVO ingrName);
 	
 	//레시피 등록
-	public int insertRecipe(RecipeDTO params);
-	
-	//레시피 상세 조회	
-	public RecipeDTO recipeView(String rcpCode);
+	public String insertRecipe(RecipeDTO recipe);
 	
 	//레시피 수정
-	public int updateRecipe(RecipeDTO params);
+	public String updateRecipe(RecipeDTO recipe);
 
 	//레시피 삭제
-	public int deleteRecipe(RecipeDTO params);
+	public String deleteRecipe(RecipeDTO recipe);
 	
 	
 	

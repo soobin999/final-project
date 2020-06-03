@@ -13,20 +13,20 @@ public interface RecipeService {
 	public List<String> ingrNameList(int cs);
 
 	//레시피 목록 조회
-	public List<RecipeDTO> allSelectRecipeList();
+	public List<RecipeDTO> allSelectRecipeList(RecipeDTO recipe);
 	
-	//레시피 등록, 수정
-	public int registerRecipe(RecipeDTO params);
+	//레시피 등록
+	public String insertRecipe(RecipeDTO recipe);
+	
+	//레시피 수정
+	public String updateRecipe(RecipeDTO recipe);
 	
 	//레시피 삭제
-	public int deleteRecipe(RecipeDTO params);
+	public String deleteRecipe();
 	
 	//레시피 상세조회+조회수 증가
 	public RecipeDTO getRecipeView();
 	
-	//레시피 식별번호
-	public String rcpCode();
-
 }
 
 

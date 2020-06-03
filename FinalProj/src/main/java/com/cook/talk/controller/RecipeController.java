@@ -8,33 +8,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.cook.talk.model.VO.IngrVO;
 import com.cook.talk.model.dao.RecipeDAO;
+import com.cook.talk.model.dto.RecipeDTO;
 import com.cook.talk.model.service.RecipeService;
 
 @Controller
 public class RecipeController {
 	
 	@Autowired
-	private RecipeService recipeService;
+	RecipeService recipeService;
 	
 	@Autowired
-	private RecipeDAO recipeDAO;
+	 RecipeDAO recipeDAO;
 
-	@GetMapping(value = "recipe/newlist")
-	public String getRecipeList(Model model) {
-		return "recipe/newlist";
-	}
-	
-	@GetMapping(value = "recipe/insertRecipe")
-	public String insertRecipeView(Model model) {
-		return "recipe/insertRecipe";
-	}
-		
-	public void insertRecipe(Model model) {
-		}
-	
 	@GetMapping("/ingrSelect")
 	public String refrigeratorSearch(Model model, IngrVO ingrVO, HttpSession session) {
 
@@ -47,13 +36,25 @@ public class RecipeController {
 
 		return "refrigerator/ingrSelect";
 	}
-
-	@GetMapping(value = "recipe/recipeView")
+	
+	@GetMapping(value = "recipe/newlist")
+	public String getRecipeList(Model model, RecipeDTO recipe) {
+//		List<RecipeDTO> getRecipeList = RecipeService.allSelectRecipeList(recipe);
+//		model.addAttribute("getRecipeList", getRecipeList);
+		return "recipe/newlist";
+	}
+	
+	@PostMapping(value = "recipe/insertRecipe")
+	public String insertRecipeView(Model model) {
+		return "recipe/insertRecipe";
+	}	
+	
+	@PostMapping(value = "recipe/recipeView")
 	public String recipeView(Model model) {
 		return "recipe/recipeView";
 	}
 	
-	@GetMapping(value = "recipe/updateRecipe")
+	@PostMapping(value = "recipe/updateRecipe")
 	public String updateRecipe(Model model) {
 		return "recipe/updateRecipe";
 	}

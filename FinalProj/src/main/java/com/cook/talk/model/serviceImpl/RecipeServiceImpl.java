@@ -15,6 +15,7 @@ public class RecipeServiceImpl implements RecipeService{
 
 	@Autowired
 	private RecipeDAO recipeDAO;
+	@Autowired(required = false)
 	private IngrVO ingrVO;
 	
 	
@@ -25,15 +26,26 @@ public class RecipeServiceImpl implements RecipeService{
 	}
 
 	@Override
-	public List<RecipeDTO> allSelectRecipeList() {
-		// TODO Auto-generated method stub
+	public List<RecipeDTO> allSelectRecipeList(RecipeDTO recipe) {
 		return null;
 	}
 	
 	@Override
-	public int registerRecipe(RecipeDTO params) {
+	public String deleteRecipe() {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
+	}
+
+	@Override
+	public String insertRecipe(RecipeDTO recipe) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String updateRecipe(RecipeDTO recipe) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -41,17 +53,7 @@ public class RecipeServiceImpl implements RecipeService{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	@Override
-	public int deleteRecipe(RecipeDTO params) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
-	@Override
-	public String rcpCode() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 }

@@ -32,5 +32,5 @@ public class HYujin {
 		user.setAccess(true);
 		user.setAuth(0);
 	}
-}
 
+}

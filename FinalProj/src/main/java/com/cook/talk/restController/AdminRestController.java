@@ -16,16 +16,16 @@ import com.cook.talk.model.dao.QnADAO;
 
 @RestController
 public class AdminRestController {
-	@Autowired
+	@Autowired(required = false)
 	private QnADAO qnaDAO;
 
-	@Autowired
+	@Autowired(required = false)
 	private AdUserDAO adUserDAO;
 
-	@Autowired
+	@Autowired(required = false)
 	private AdRecipeDAO adRecipeDAO;
 
-	@Autowired
+	@Autowired(required = false)
 	private AdIngrDAO adIngrDAO;
 
 	@PostMapping("/admin/complain")
@@ -90,13 +90,15 @@ public class AdminRestController {
 		return "admin";
 	}
 
-	@PostMapping("/admin/updateUserNickName") // 모든 회원정보 뿌려주기 위해
+	@PostMapping("/admin/updateRecipe") // 모든 회원정보 뿌려주기 위해
 	public String updateRecipe(Model model, RecipeVO rcpUpdate) {
 
 		return "admin";
 	}
 
-	@PostMapping("/admin/updateUserNickName") // 모든 회원정보 뿌려주기 위해
+	
+	
+	@PostMapping("/admin/searchUserNickName") // 모든 회원정보 뿌려주기 위해
 	public String searchRecipeByNickName(Model model, UserVO userNickName) {
 
 		return "admin";
