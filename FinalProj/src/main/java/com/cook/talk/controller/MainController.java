@@ -16,18 +16,21 @@ public class MainController {
 	private MainService main;
 	@Autowired(required = false)
 	private ChefDAO chef;
+
 	@GetMapping("/index")
 	public String index(Model model) {
-		model.addAttribute("chef",chef.selectChefDetail("zleda9@naver.com"));
+		
 		return "/main/index";
 	}
-	@PostMapping
+
+	@PostMapping("/loginIndex")
 	public String loginIndex(Model model, String expl) {
-		model.addAttribute("",main.recipeList(expl));
+		model.addAttribute("", main.recipeList(expl));
 		return "/loginIndex";
 	}
-	@PostMapping
-	public String qnaDAO() {
+
+	@PostMapping("/qnAGo")
+	public String qnaGo() {
 		return "/admin/complain";
-		}
+	}
 }

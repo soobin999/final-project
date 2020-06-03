@@ -17,10 +17,10 @@
 	</select>
 
 	<!-- 레시피 식별코드 서칭하는거 필요 -->
-	<select id="searchRcpByRcpCode"></select>
+	<select id="searchRcpByRcpCode">
 	select * from recipe.views
 	where rcpCode like (#{rcpCode})
-
+</select>
 	<select id="selectStaticMonths" resultType="Integer">
 		select count(*) from
 		views, user

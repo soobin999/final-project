@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import com.cook.talk.model.VO.QnAVO;
 import com.cook.talk.model.VO.UserVO;
 @Service
+@Alias("qnADAO")
 public interface QnADAO {
 	public void insertReply(UserVO userId, QnAVO qna);
 	public List<QnAVO> selectQna();
 	
-
 }

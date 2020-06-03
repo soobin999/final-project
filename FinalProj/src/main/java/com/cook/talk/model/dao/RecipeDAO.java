@@ -2,12 +2,12 @@ package com.cook.talk.model.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Service;
 
 import com.cook.talk.model.VO.IngrVO;
 import com.cook.talk.model.dto.RecipeDTO;
-@Service
-
+@Mapper
 public interface RecipeDAO {
 
 	//재료 리스트 받아오기
