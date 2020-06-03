@@ -1,5 +1,7 @@
 package com.cook.talk.ck;
 
+import java.sql.Date;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,22 +17,31 @@ public class HYujin {
 
 	@Autowired
 	UserDAO userDao;
-	
+
 	@Test
 	public void find() {
 		log.info(userDao.findUserById("abc@naver.com").toString());
-	}
-	
+	}	
 	@Test
 	public void save() {
-		UserVO user = new UserVO(null, null, null, null, 0, false, false, null, 0, 0);
-		user.setUserId("abcd@naver.com");
+
+
+		UserVO user = new UserVO();
+		user.setUserId("spd@naver.com");
 		user.setUserPw("1234");
-		user.setNickName("유찌");
-		user.getBirth();
+		user.setNickName("스파이더");
+		user.setBirth(new Date(1994 - 06 - 05));
+
+
 		user.setGender(true);
 		user.setAccess(true);
 		user.setAuth(0);
+
+
+		userDao.login(user);
+
 	}
 
 }
+
+		

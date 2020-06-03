@@ -14,7 +14,7 @@
 	</select>
 	
 	<select id="selectRecipe" resultType="recipeVO">
-		select userid,rcpTitle,rcpPic from rcp where userId = #{userId}
+		select userId,rcpTitle,rcpPic from rcp where userId = #{userId}
 	</select>
 	<select id="allSelectChef" resultType="chefDTO">
 		select us.nickName,us.userPic,us.rcpUploads,us.followers, sum(rcpViews) as rcpview
@@ -22,9 +22,9 @@
 			   where us.userId=rcp.userId
 			   group by us.userId 
 			   <choose>
-			   <when test="status== rcpUploads">order by us.rcpUploads,us.followers,rcp.rcpviews</when>
-			   <when test="status== followers">order by us.followers,us.rcpUploads,rcp.rcpviews</when>
-			   <when test="status== rcpveiws">order by rcp.rcpViews,us.rcpUploads,us.followers</when>
+			   <when test='status.equals("rcpUploads")'>order by us.rcpUploads,us.followers,rcp.rcpviews</when>
+			   <when test='status.equals("followers")'>order by us.followers,us.rcpUploads,rcp.rcpviews</when>
+			   <when test='status.eqauls("rcpveiws")'>order by rcp.rcpViews,us.rcpUploads,us.followers</when>
 			   </choose>
 	</select>
 </mapper>

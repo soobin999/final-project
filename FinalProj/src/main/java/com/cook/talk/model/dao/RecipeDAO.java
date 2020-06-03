@@ -21,9 +21,6 @@ public interface RecipeDAO {
 
 	//레시피 목록 조회
 	public List<RecipeDTO> allSelectRecipeList();
-
-	//선택한 재료 저장하는 곳
-	public List<String> getMySelectedIngrList(IngrVO ingrName);
 	
 	//레시피 등록
 	public String insertRecipe(RecipeDTO recipe);
