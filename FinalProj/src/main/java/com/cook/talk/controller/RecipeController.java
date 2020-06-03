@@ -37,16 +37,11 @@ public class RecipeController {
 	public void insertRecipe(Model model) {
 	}
 
-
+	
 	@GetMapping("/ingrSelect")
-	public String refrigeratorSearch(Model model, IngrVO ingrVO, HttpSession session) {
-
-		if (ingrVO.getIngrName() != null) {
-			// DB검색이 아닌 내가 검색한 키워드를 저장하여 이미 있는 리스트에서 검색
-			model.addAttribute("ingrName", ingrVO.getIngrName());
-		} else {
-			model.addAttribute("ingrName", "");
-		}
+	public String refrigeratorSearch(Model model) {
+		
+		model.addAttribute("ingrs", recipeDAO.getIngrName("가", "나"));
 		
 		return "refrigerator/ingrSelect";
 	}

@@ -27,6 +27,11 @@ public class RecipeRestController {
 	@GetMapping(value = "/chosung")
 	public List<String> chosung(IngrVO ingrVO, HttpSession session, int cs) {
 		
+		/*
+		 * if (ingrVO.getIngrName() != null) { // DB검색이 아닌 내가 검색한 키워드를 저장하여 이미 있는 리스트에서
+		 * 검색 model.addAttribute("ingrName", ingrVO.getIngrName()); }
+		 */
+		
 		//재료 리스트
 		List<String> ingrs = recipeService.ingrNameList(cs);
 	

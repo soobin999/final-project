@@ -20,7 +20,7 @@ public class RecipeServiceImpl implements RecipeService{
 	
 	//재료 초성 분류 
 	public List<String> ingrNameList(int cs) {
-		String[] chosungList = {"가","나","다","라","마","바","사","아","자","차","카","타","파","하"};
+		String[] chosungList = {"가","나","다","라","마","바","사","아","자","차","카","타","파","하","가"};
 		List<String> ingrNameList = recipeDAO.getIngrName(chosungList[cs], chosungList[cs+1]);
 		return ingrNameList;
 	}
