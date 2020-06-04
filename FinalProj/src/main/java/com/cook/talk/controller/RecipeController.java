@@ -20,12 +20,7 @@ public class RecipeController {
 	@Autowired
 	RecipeDAO recipeDAO;
 
-	@GetMapping("/ingrSelect")
-	public String refrigeratorSearch(Model model) {		
-		model.addAttribute("ingrs", recipeDAO.getIngrName("가", "나"));
-		
-		return "refrigerator/ingrSelect";
-	}
+	
 	
 	@GetMapping(value = "recipe/newlist")
 	public String getRecipeList(Model model, RecipeDTO recipe) {
@@ -39,7 +34,14 @@ public class RecipeController {
 		return "recipe/insertRecipe";
 	}	
 	
-	@PostMapping(value = "recipe/recipeView")
+	@GetMapping("/ingrSelect")
+	public String refrigeratorSearch(Model model) {
+		model.addAttribute("ingrs", recipeDAO.getIngrName("가", "나"));
+		System.out.println(recipeDAO.getIngrName("가", "나"));
+		return "refrigerator/ingrSelect";
+	}
+
+	@GetMapping(value = "recipe/recipeView")
 	public String recipeView(Model model) {
 		return "recipe/recipeView";
 	}
