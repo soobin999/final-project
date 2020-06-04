@@ -13,7 +13,7 @@
 
 	<select id="getIngrName" parameterType="String" resultType="ingrVO">
 	SELECT ingrName FROM recipe.ingr WHERE ingrName>=#{chosung1}
-	<if test='chosung1!="하"'>AND ingrName<![CDATA[>]]>#{chosung2}</if>
+	<if test='!chosung1.equals("하")'>AND ingrName<![CDATA[<]]>#{chosung2}</if>
 	</select>
 
 
@@ -21,10 +21,7 @@
 	SELECT * FROM recipe.recipedto;
 	</select>
 	
-	<insert id="insertRecipe" parameterType="recipeDto">
-	INSERT INTO recipe.recipedto <![CDATA[(<include refid="recipedtoColumns" /> ) ]]>
-	VALUES (#{chosung2} )
-	</insert>	
+	
 
 
 </mapper>

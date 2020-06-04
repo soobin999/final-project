@@ -40,9 +40,8 @@ public class RecipeController {
 	
 	@GetMapping("/ingrSelect")
 	public String refrigeratorSearch(Model model) {
-		
 		model.addAttribute("ingrs", recipeDAO.getIngrName("가", "나"));
-		
+		System.out.println(recipeDAO.getIngrName("가", "나"));
 		return "refrigerator/ingrSelect";
 	}
 
