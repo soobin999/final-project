@@ -19,7 +19,7 @@ public class MainController {
 
 	@GetMapping("/index")
 	public String index(Model model) {
-		
+		String ingr="아아";
 		return "/main/index";
 	}
 
