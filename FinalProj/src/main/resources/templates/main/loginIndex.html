@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -73,6 +73,21 @@ iframe
 			<li><a href="/admin/admin.html">고객센터</a></li>
 		</ul>
 	</div>
+	<table border=1>
+		<thead>
+			<tr>
+				<th>title</th>
+				<th>pic</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="rcpList : ${rcpList}">
+				<td th:text="${rcpList.rcpTitle}"></td>
+				<td th:text="${rcpList.rcpPic}"></td>
+			</tr>
+		</tbody>
+	</table>
+
 
 	<br>
 	<br>

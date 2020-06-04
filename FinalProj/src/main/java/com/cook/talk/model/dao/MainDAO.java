@@ -2,12 +2,12 @@ package com.cook.talk.model.dao;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
+import org.apache.ibatis.annotations.Mapper;
 
 import com.cook.talk.model.VO.RecipeVO;
 
-@Service
+@Mapper
 public interface MainDAO {
 
-	public List<RecipeVO> recipeList();
+	public List<RecipeVO> recipeList(List<String> repCode);
 }

@@ -5,17 +5,10 @@
 
 <mapper namespace="com.cook.talk.model.dao.MainDAO">
 
-	<select id="recipeList">
-		select * from rcp where 
-				rcpCode=#{rcpCode} 
-				or rcpCode=#{rcpCode} 
-			or rcpCode=#{rcpCode} 
-			or rcpCode=#{rcpCode} 
-			or rcpCode=#{rcpCode}
-			or rcpCode=#{rcpCode} 
-			or rcpCode=#{rcpCode} 
-			or rcpCode=#{rcpCode} 
-			or rcpCode=#{rcpCode}
-			or rcpCode=#{rcpCode} 
+	<select id="recipeList" parameterType="String" resultType="recipeVO">
+		select rcpTitle,rcpPic from rcp where
+		<foreach collection="list" item="rcpCode"  index="index"  separator="or" >
+			rcpCode= #{rcpCode}
+		</foreach>
 	</select>
 </mapper>
